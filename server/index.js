@@ -19,13 +19,15 @@ app.post("/add", (req, res) => {
     .create({
       task: req.body.task,
     })
-    .then((resut) => res.json(res))
+    .then((result) => res.json(result)) // ✅ Corrected variable name
+
     .catch((error) => res.json(error));
 });
-const PORT = 3001 || process.env.PORT;
+const PORT = process.env.PORT || 3001;
 
-connectDB().then(() => {
+(async () => {
+  await connectDB();
   app.listen(PORT, () => {
-    console.log("server is running on prot: http://localhost:", PORT);
+    console.log(`Server is running on: http://localhost:${PORT}`);
   });
-});
+})();
