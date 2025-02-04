@@ -1,0 +1,12 @@
+
+input{
+    width: 100%;
+}
+button{
+    width: 80px;
+    margin-bottom: 15px;
+    margin-right: 100px;
+}
+.text_items{
+    text-align: left;
+}
